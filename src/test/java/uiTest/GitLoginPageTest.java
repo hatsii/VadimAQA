@@ -1,8 +1,10 @@
+package uiTest;
+
 import PageObject.GitLoginPage;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
-public class GitLoginPageTest extends BaseTestGit{
+public class GitLoginPageTest extends BaseTestGit {
 
 @Test
 
