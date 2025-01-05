@@ -13,16 +13,22 @@ public class GitLoginPage {
 private static final SelenideElement gitLoginInput = $(By.id("login_field"));
 private static final SelenideElement gitPasswordInput = $(By.id("password"));
 private static final SelenideElement gitSubmitButton = $(By.cssSelector("input[type='submit'].btn.btn-primary.btn-block.js-sign-in-button"));
-private static final SelenideElement gitErrorMessage = $(By.xpath("//*[@id=\"js-flash-container\"]/div/div/div/text()"));
+private static final SelenideElement gitErrorMessage = $(By.className("flash-error"));
 private static final SelenideElement checkLogoUser = $("button[data-login='hatsii']");
 private static final SelenideElement checkSignOutButton = $(By.xpath("//*[@id=\":r16:--label\"]"));
 
 
-    public void SuccessAuthOperation(String login,String password){
+    public void successAuthOperation(String login,String password){
         setLoginGit(login);
         setPasswordGit(password);
         clickSubmitButtonGit();
         LogoUserVisible();
+    }
+    public void mistakeAuthOperation(String login,String password){
+        setLoginGit(login);
+        setPasswordGit(password);
+        clickSubmitButtonGit();
+        errorMessageVisible();
     }
 
 
@@ -36,7 +42,7 @@ private static final SelenideElement checkSignOutButton = $(By.xpath("//*[@id=\"
     public void clickSubmitButtonGit(){
         gitSubmitButton.shouldBe(visible).click();
     }
-    public void ErrorMessageVisible  (){
+    public void errorMessageVisible  (){
         gitErrorMessage.shouldBe(visible);
     }
     public void LogoUserVisible(){

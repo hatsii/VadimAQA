@@ -5,10 +5,17 @@ import org.junit.jupiter.api.Test;
 public class GitLoginPageTest extends BaseTestGit{
 
 @Test
-    public void SuccessAuthOperationGit(){
+
+    public  void mistakeAuthOperationGit(){
     GitLoginPage GitLoginPage = new GitLoginPage();
     Selenide.open("/session");
-    GitLoginPage.SuccessAuthOperation("hatsii", "vadimbolt2304");
+    GitLoginPage.mistakeAuthOperation("hatsiiMistake", "123456");
+    }
+    @Test
+    public void successAuthOperationGit(){
+    GitLoginPage GitLoginPage = new GitLoginPage();
+    Selenide.open("/session");
+    GitLoginPage.successAuthOperation("hatsii", "vadimbolt2304");
 }
 
 }
