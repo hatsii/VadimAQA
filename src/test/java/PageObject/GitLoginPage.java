@@ -15,7 +15,7 @@ private static final SelenideElement gitPasswordInput = $(By.id("password"));
 private static final SelenideElement gitSubmitButton = $(By.cssSelector("input[type='submit'].btn.btn-primary.btn-block.js-sign-in-button"));
 private static final SelenideElement gitErrorMessage = $(By.className("flash-error"));
 private static final SelenideElement checkLogoUser = $("button[data-login='hatsii']");
-private static final SelenideElement checkSignOutButton = $(By.xpath("//*[@id=\":r16:--label\"]"));
+
 
 
     public void successAuthOperation(String login,String password){
@@ -30,8 +30,6 @@ private static final SelenideElement checkSignOutButton = $(By.xpath("//*[@id=\"
         clickSubmitButtonGit();
         errorMessageVisible();
     }
-
-
 
     public void setLoginGit(String login){
         gitLoginInput.shouldBe(visible).setValue(login);

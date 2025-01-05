@@ -3,14 +3,16 @@ package PageObject;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class FirstLastNamePage {
-    private static final SelenideElement solutionsButton = $(By.xpath("//button[text()='Solutions']"));
+    private static final SelenideElement solutionsButton = $(By.xpath("//button[normalize-space(text())='Solutions']"));
     private static final SelenideElement ciCdLink = $(By.xpath("//a[contains(text(),'CI/CD')]"));
-    private static final SelenideElement contactSalesButton = $(By.xpath("//a[contains(text(),'Contact sales')]"));
+    private static final SelenideElement contactSalesButton = $(By.xpath("//a[normalize-space(.//span[text()='Contact sales'])]\n"));
     private static final SelenideElement firstNameInput = $(By.xpath("//input[@name='first_name']"));
     private static final SelenideElement lastNameInput = $(By.xpath("//input[@name='last_name']"));
 
@@ -42,7 +44,7 @@ public class FirstLastNamePage {
                 .isEqualTo(savedLastName);
     }
     public void hoverSolutionButton(){
-        solutionsButton.hover().shouldBe(visible);
+        solutionsButton.shouldBe(visible, Duration.ofSeconds(2)).hover();
     }
     public void clickCiCdButton(){
         ciCdLink.shouldBe(visible).click();
