@@ -44,7 +44,7 @@ private static final SelenideElement checkLogoUser = $("button[data-login='hatsi
         gitErrorMessage.shouldBe(visible);
     }
     public void LogoUserVisible(){
-        checkLogoUser.shouldBe(visible).click();
+        checkLogoUser.shouldBe(visible);
     }
 
 

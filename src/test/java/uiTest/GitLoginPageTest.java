@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 
 public class GitLoginPageTest extends BaseTestGit {
 
-@Test
-
+    @Test
     public  void mistakeAuthOperationGit(){
     GitLoginPage GitLoginPage = new GitLoginPage();
     Selenide.open("/session");
     GitLoginPage.mistakeAuthOperation("hatsiiMistake", "123456");
     }
+
     @Test
     public void successAuthOperationGit(){
     GitLoginPage GitLoginPage = new GitLoginPage();

@@ -50,6 +50,7 @@ public class FirstLastNamePage {
         ciCdLink.shouldBe(visible).click();
     }
     public void clickContactSalesButton(){
+        contactSalesButton.scrollTo();
         contactSalesButton.shouldBe(visible).click();
     }
     public void setFirstNameInput(String firstName){
