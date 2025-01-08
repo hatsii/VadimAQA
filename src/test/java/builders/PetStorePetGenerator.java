@@ -11,9 +11,9 @@ public class PetStorePetGenerator {
         return PostPetStorePet
                 .builder()
                 .name("DogsAQA")
-                .id(1)
+                .id(121)
                 .category(PostPetStorePet.Category.builder()
-                        .id(101)
+                        .id(1234)
                         .name("Dog")
                         .build())
                 .tags(Arrays.asList(
