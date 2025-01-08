@@ -5,10 +5,11 @@ import lombok.Data;
 
 @Data
 public class ReqResUser{
-	private String color;
-	private int year;
-	private String name;
+	@JsonProperty("last_name")
+	private String lastName;
 	private int id;
-	@JsonProperty("pantone_value")
-	private String pantoneValue;
+	private String avatar;
+	@JsonProperty("first_name")
+	private String firstName;
+	private String email;
 }

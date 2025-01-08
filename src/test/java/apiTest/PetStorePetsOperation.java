@@ -1,6 +1,7 @@
+package apiTest;
+
 import io.restassured.http.ContentType;
 import org.hamcrest.CoreMatchers;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import static builders.PetStorePetGenerator.setPetData;
