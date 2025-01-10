@@ -17,9 +17,9 @@ public class ReqResUserTest {
                 .then().log().body().extract().jsonPath()
                 .getList("data", ReqResUser.class);
 
-        for (ReqResUser user : infoAvatarUser){
+        infoAvatarUser.forEach(user -> {
             assert user.getAvatar().contains("https://reqres.in");
             System.out.println(user.getAvatar());
-        }
+        });
     }
 }
