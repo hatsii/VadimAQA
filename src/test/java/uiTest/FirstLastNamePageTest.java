@@ -10,7 +10,8 @@ public class FirstLastNamePageTest extends BaseTestGit {
         Selenide.open("/");
         FirstLastNamePage firstLastNamePage = new FirstLastNamePage();
         firstLastNamePage.stepsCheckLastFirstName("Vadim", "Tatarnikov");
-        firstLastNamePage.expectedFirstLastNameInput();
+        firstLastNamePage.saveExpectedFirstLastName("Vadim", "Tatarnikov");
+        firstLastNamePage.verifyFirstLastNameInput();
 
     }
 }

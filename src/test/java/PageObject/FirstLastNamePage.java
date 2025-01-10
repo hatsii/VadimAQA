@@ -27,11 +27,12 @@ public class FirstLastNamePage {
         setFirstNameInput(firstName);
         setLastNameInput(lastName);
 
-        this.savedFirstName = firstName;
+    }
+    public void saveExpectedFirstLastName(String firstName, String lastName) {
+        this.savedFirstName = firstName; // Сохраняем данные
         this.savedLastName = lastName;
     }
-
-    public void expectedFirstLastNameInput() {
+    public void verifyFirstLastNameInput() {
         String actualFirstName = firstNameInput.shouldBe(visible).getValue();
         String actualLastName = lastNameInput.shouldBe(visible).getValue();
 
