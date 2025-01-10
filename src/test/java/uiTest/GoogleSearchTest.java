@@ -10,13 +10,15 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class GoogleSearchTest {
+    private static final String GOOGLE_URL = "https://www.google.ru/";
     private GoogleSearch googleSearch;
+
 
 
     @BeforeEach
     public void setup() {
         googleSearch = new GoogleSearch();
-        Selenide.open("https://www.google.ru/");
+        Selenide.open(GOOGLE_URL);
     }
 
 
