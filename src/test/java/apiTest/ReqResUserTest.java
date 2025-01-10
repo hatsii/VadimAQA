@@ -8,11 +8,13 @@ import pojo.ReqResUser;
 import java.util.List;
 
 public class ReqResUserTest {
+        public static final String BASE_URI = "https://reqres.in/api/users";
+
     @Test
     public void ReqResUserAvatarTest (){
         List<ReqResUser> infoAvatarUser = RestAssured.given()
                 .accept(ContentType.JSON)
-                .baseUri("https://reqres.in/api/users")
+                .baseUri(BASE_URI)
                 .when().get()
                 .then().log().body().extract().jsonPath()
                 .getList("data", ReqResUser.class);

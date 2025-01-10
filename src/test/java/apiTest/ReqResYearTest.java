@@ -9,11 +9,12 @@ import static io.restassured.RestAssured.given;
 import java.util.List;
 
 public class ReqResYearTest {
+    public static final String BASE_URI = "https://reqres.in/api/unknown";
     @Test
     public void yearGreater2000Test() {
         List<ReqResUserYear> infousers = RestAssured.given()
                 .accept(ContentType.JSON)
-                .baseUri("https://reqres.in/api/unknown")
+                .baseUri(BASE_URI)
                 .when().get()
                 .then().log().body().extract()
                 .jsonPath()
