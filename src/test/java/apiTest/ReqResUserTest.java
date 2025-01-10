@@ -22,7 +22,4 @@ public class ReqResUserTest {
             System.out.println(user.getAvatar());
         }
     }
-
-
-
 }

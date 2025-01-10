@@ -9,8 +9,8 @@ public class GitHubTopicsTest extends BaseTestGit{
     @Test
     public void containedListTopicsTest(){
         Selenide.open("/");
-        GitHubTopics GitHubTopics = new GitHubTopics();
-        GitHubTopics.containedListTopics();
+        GitHubTopics gitHubTopics = new GitHubTopics();
+        gitHubTopics.containedListTopics();
 
     }
 

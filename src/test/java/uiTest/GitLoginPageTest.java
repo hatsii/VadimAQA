@@ -8,16 +8,16 @@ public class GitLoginPageTest extends BaseTestGit {
 
     @Test
     public  void mistakeAuthOperationGit(){
-    GitLoginPage GitLoginPage = new GitLoginPage();
+    GitLoginPage gitLoginPage = new GitLoginPage();
     Selenide.open("/session");
-    GitLoginPage.mistakeAuthOperation("hatsiiMistake", "123456");
+    gitLoginPage.mistakeAuthOperation("hatsiiMistake", "123456");
     }
 
     @Test
     public void successAuthOperationGit(){
-    GitLoginPage GitLoginPage = new GitLoginPage();
+    GitLoginPage gitLoginPage = new GitLoginPage();
     Selenide.open("/session");
-    GitLoginPage.successAuthOperation("hatsii", "vadimbolt2304");
+    gitLoginPage.successAuthOperation("hatsii", "vadimbolt2304");
 }
 
 }

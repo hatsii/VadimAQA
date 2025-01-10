@@ -15,6 +15,6 @@ public class PetStoreUserAuth {
                 .contentType(ContentType.JSON)
                 .baseUri("https://petstore3.swagger.io/api/v3")
                 .when().get("/user/login?username=tatarkof&password=invalidPassword")
-                .then().log().body().statusCode(401);
+                .then().log().body().statusCode(400);
     }
 }

@@ -47,11 +47,6 @@ private static final SelenideElement checkLogoUser = $("button[data-login='hatsi
         checkLogoUser.shouldBe(visible);
     }
 
-
-
-
-
-
 }
 
 
