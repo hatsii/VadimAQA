@@ -29,8 +29,5 @@ public class GoogleSearchTest {
         googleSearch.verifyResultsMoreThan(5);
     }
 
-    @AfterEach
-    public void closeGoogle() {
-        closeWebDriver();
-    }
+
 }

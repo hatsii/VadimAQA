@@ -13,8 +13,5 @@ public class BaseTestGit {
         Configuration.screenshots = false;
         Configuration.savePageSource = false;
     }
-    @AfterEach
-    public void tearDown() {
-        Selenide.closeWebDriver();
-    }
+
 }
