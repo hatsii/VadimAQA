@@ -3,9 +3,9 @@ package uiTest;
 import PageObject.GitLoginPage;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
+import static utils.Source.BASE_PATH_GIT;
 
 public class GitLoginPageTest extends BaseTestGit {
-    public static final String BASE_PATH_GIT = "/session";
 
     @Test
     public  void mistakeAuthOperationGit(){

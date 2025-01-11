@@ -29,12 +29,20 @@ public class FirstLastNamePage {
 
     }
     public void saveExpectedFirstLastName(String firstName, String lastName) {
-        this.savedFirstName = firstName; // Сохраняем данные
+        this.savedFirstName = firstName;
         this.savedLastName = lastName;
     }
+
+    public String getActualFirstName(){
+        return firstNameInput.shouldBe(visible).getValue();
+    }
+    public String getActualLastName(){
+        return lastNameInput.shouldBe(visible).getValue();
+    }
+
     public void verifyFirstLastNameInput() {
-        String actualFirstName = firstNameInput.shouldBe(visible).getValue();
-        String actualLastName = lastNameInput.shouldBe(visible).getValue();
+        String actualFirstName = getActualFirstName();
+        String actualLastName = getActualLastName();
 
         assertThat(actualFirstName)
                 .as("First name incorrect")
@@ -44,8 +52,9 @@ public class FirstLastNamePage {
                 .as("Last name incorrect")
                 .isEqualTo(savedLastName);
     }
+
     public void hoverSolutionButton(){
-        solutionsButton.shouldBe(visible, Duration.ofSeconds(2)).hover();
+        solutionsButton.shouldBe(visible).hover();
     }
     public void clickCiCdButton(){
         ciCdLink.shouldBe(visible).click();

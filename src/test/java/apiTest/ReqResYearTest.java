@@ -7,6 +7,7 @@ import pojo.ReqResUserYear;
 import static io.restassured.RestAssured.given;
 
 import java.util.List;
+import static utils.Source.BASE_URI_REQRES;
 
 public class ReqResYearTest {
     public static final String BASE_URI = "https://reqres.in/api/unknown";
@@ -14,7 +15,8 @@ public class ReqResYearTest {
     public void yearGreater2000Test() {
         List<ReqResUserYear> infousers = RestAssured.given()
                 .accept(ContentType.JSON)
-                .baseUri(BASE_URI)
+                .baseUri(BASE_URI_REQRES)
+                .basePath("/unknown")
                 .when().get()
                 .then().log().body().extract()
                 .jsonPath()

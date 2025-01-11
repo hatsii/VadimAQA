@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import pojo.ReqResUser;
 
 import java.util.List;
+import static utils.Source.BASE_URI_REQRES;
 
 public class ReqResUserTest {
         public static final String BASE_URI = "https://reqres.in/api/users";
@@ -14,7 +15,8 @@ public class ReqResUserTest {
     public void ReqResUserAvatarTest (){
         List<ReqResUser> infoAvatarUser = RestAssured.given()
                 .accept(ContentType.JSON)
-                .baseUri(BASE_URI)
+                .baseUri(BASE_URI_REQRES)
+                .basePath("/users")
                 .when().get()
                 .then().log().body().extract().jsonPath()
                 .getList("data", ReqResUser.class);
