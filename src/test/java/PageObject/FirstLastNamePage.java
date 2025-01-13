@@ -26,32 +26,37 @@ public class FirstLastNamePage {
         clickContactSalesButton();
         setFirstNameInput(firstName);
         setLastNameInput(lastName);
-
     }
+    public void setFirstNameInput(String firstName){
+        firstNameInput.shouldBe(visible).setValue(firstName);
+    }
+    public void setLastNameInput(String lastName){
+        lastNameInput.shouldBe(visible).setValue(lastName);
+    }
+
     public void saveExpectedFirstLastName(String firstName, String lastName) {
         this.savedFirstName = firstName;
         this.savedLastName = lastName;
     }
 
-    public String getActualFirstName(){
+    public  String getActualFirstName(){
         return firstNameInput.shouldBe(visible).getValue();
     }
     public String getActualLastName(){
         return lastNameInput.shouldBe(visible).getValue();
     }
 
-    public void verifyFirstLastNameInput() {
-        String actualFirstName = getActualFirstName();
-        String actualLastName = getActualLastName();
-
-        assertThat(actualFirstName)
+    public void verifyFirstNameInput() {
+        assertThat(getActualFirstName())
                 .as("First name incorrect")
                 .isEqualTo(savedFirstName);
-
-        assertThat(actualLastName)
+    }
+    public void verifyLastNameInput() {
+        assertThat(getActualLastName())
                 .as("Last name incorrect")
                 .isEqualTo(savedLastName);
     }
+
 
     public void hoverSolutionButton(){
         solutionsButton.shouldBe(visible).hover();
@@ -63,12 +68,7 @@ public class FirstLastNamePage {
         contactSalesButton.scrollTo();
         contactSalesButton.shouldBe(visible).click();
     }
-    public void setFirstNameInput(String firstName){
-        firstNameInput.shouldBe(visible).setValue(firstName);
-    }
-    public void setLastNameInput(String lastName){
-        lastNameInput.shouldBe(visible).setValue(lastName);
-    }
+
 }
 
 

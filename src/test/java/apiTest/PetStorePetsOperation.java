@@ -9,7 +9,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static utils.Source.BASE_URI_PETSTORE;
 import static utils.Source.BASE_PATH_PET;
 
-import utils.Source;
 
 public class PetStorePetsOperation {
 
