@@ -34,8 +34,11 @@ public class FirstLastNamePage {
         lastNameInput.shouldBe(visible).setValue(lastName);
     }
 
-    public void saveExpectedFirstLastName(String firstName, String lastName) {
+    public void saveExpectedFirstName(String firstName) {
         this.savedFirstName = firstName;
+
+    }
+    public void saveExpectedLastName(String lastName) {
         this.savedLastName = lastName;
     }
 

@@ -10,7 +10,8 @@ public class FirstLastNamePageTest extends BaseTestGit {
         Selenide.open("/");
         FirstLastNamePage firstLastNamePage = new FirstLastNamePage();
         firstLastNamePage.stepsCheckLastFirstName("Vadim", "Tatarnikov");
-        firstLastNamePage.saveExpectedFirstLastName("Vadim", "Tatarnikov");
+        firstLastNamePage.saveExpectedFirstName("Vadim");
+        firstLastNamePage.saveExpectedLastName("Tatarnikov");
         firstLastNamePage.verifyFirstNameInput();
 
     }
@@ -19,7 +20,8 @@ public class FirstLastNamePageTest extends BaseTestGit {
         Selenide.open("/");
         FirstLastNamePage firstLastNamePage = new FirstLastNamePage();
         firstLastNamePage.stepsCheckLastFirstName("Vadim", "Tatarnikov");
-        firstLastNamePage.saveExpectedFirstLastName("Vadim", "Tatarnikov");
+        firstLastNamePage.saveExpectedFirstName("Vadim");
+        firstLastNamePage.saveExpectedLastName("Tatarnikov");
         firstLastNamePage.verifyLastNameInput();
 
     }
